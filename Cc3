@@ -1,0 +1,119 @@
+using System;
+
+namespace CSharpRampUp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Part 1
+
+            // Convert pounds to kilograms
+            Console.Write("Enter weight in pounds: ");
+            double pounds = Convert.ToDouble(Console.ReadLine());
+            double kilograms = pounds * 0.453592;
+            Console.WriteLine($"Weight: {pounds} lbs, Converted to kilograms: {kilograms} kg");
+
+            // Convert miles to kilometers
+            Console.Write("Enter distance in miles: ");
+            double miles = Convert.ToDouble(Console.ReadLine());
+            double kilometers = miles * 1.60934;
+            Console.WriteLine($"Distance: {miles} mi, Converted to kilometers: {kilometers} km");
+
+            // Convert Fahrenheit to Celsius
+            Console.Write("Enter temperature in Fahrenheit: ");
+            double fahrenheit = Convert.ToDouble(Console.ReadLine());
+            double celsius = (fahrenheit - 32) * 5 / 9;
+            Console.WriteLine($"Temperature: {fahrenheit} °F, Converted to Celsius: {celsius} °C");
+
+            // Calculate average age of students
+            int totalAge = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"Enter age of student {i + 1}: ");
+                int age = Convert.ToInt32(Console.ReadLine());
+                totalAge += age;
+            }
+            double averageAge = totalAge / 10.0;
+            Console.WriteLine($"Ages of students: [/* List of ages */], Average Age: {averageAge}");
+
+            // Fantasy story
+            string character1 = "Gandalf";
+            string character2 = "Aragorn";
+            string character3 = "Legolas";
+            string equipment1 = "Staff of Power";
+            string equipment2 = "Anduril";
+            string equipment3 = "Bow of the Woodland Realm";
+            string item1 = "Crystal of Wisdom";
+            string item2 = "Elfstone";
+            string item3 = "Cloak of Invisibility";
+
+            string story = $"Once upon a time, {character1} wielded the mighty {equipment1}, while {character2} bore {equipment2} and {character3} skillfully used {equipment3}. They discovered the enchanted {item1} and {item2}, but the most elusive of all was the {item3}.";
+
+            Console.WriteLine(story);
+
+            // Part 2
+
+            // Number pattern 1
+            Console.Write("Enter a number for pattern 1: ");
+            int pattern1 = Convert.ToInt32(Console.ReadLine());
+            if (pattern1 <= 0)
+            {
+                Console.WriteLine("Invalid input");
+            }
+            else
+            {
+                for (int i = 1; i <= pattern1; i++)
+                {
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write(j);
+                    }
+                    Console.WriteLine();
+                }
+            }
+
+            // Number pattern 2
+            Console.Write("Enter a number for pattern 2: ");
+            int pattern2 = Convert.ToInt32(Console.ReadLine());
+            if (pattern2 <= 0)
+            {
+                Console.WriteLine("Invalid input");
+            }
+            else
+            {
+                int sum = 0;
+                for (int i = 1; i <= pattern2; i++)
+                {
+                    Console.Write(i);
+                    sum += i;
+                    if (i < pattern2)
+                    {
+                        Console.Write("+");
+                    }
+                }
+                Console.WriteLine();
+                Console.WriteLine($"Sum: {sum}");
+            }
+
+            // Number pattern 3
+            Console.Write("Enter a number for pattern 3: ");
+            int pattern3 = Convert.ToInt32(Console.ReadLine());
+            if (pattern3 <= 0)
+            {
+                Console.WriteLine("Invalid input");
+            }
+            else
+            {
+                for (int i = pattern3; i >= 1; i--)
+                {
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write(j);
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+    }
+}
